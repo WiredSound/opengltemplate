@@ -4,13 +4,13 @@
 #include <iostream>
 
 int main() {
-	if(glfwInit()) {
-		std::cout << "Successfully initialised GLFW" << std::endl;
-	}
-	else {
-		std::cerr << "Failed to initialize GLFW" << std::endl;
+	if(!glfwInit()) {
+		std::cerr << "Failed to initialise GLFW" << std::endl;
+		glfwTerminate();
 		return -1;
 	}
+
+	// ...
 
 	glfwTerminate();
 
