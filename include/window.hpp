@@ -4,10 +4,10 @@
 
 class Window {
 public:
-	void create(int width, int height, const char* title);
-	GLFWwindow* operator*();
-	~Window();
+    void create(int width, int height, const char* title);
+    GLFWwindow* operator*();
+    ~Window();
 
 private:
-	GLFWwindow* handle;
+    GLFWwindow* handle;
 };
