@@ -5,9 +5,11 @@ set(SRC_DIR "${CMAKE_CURRENT_SOURCE_DIR}/src")
 set(INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/include")
 set(LIB_DIR "${CMAKE_CURRENT_SOURCE_DIR}/lib")
 
-add_executable(${PROJECT_NAME} "${SRC_DIR}/main.cpp" "${SRC_DIR}/window.cpp")
+file(GLOB_RECURSE SRC_FILES ${SRC_DIR}/*.cpp)
+
+add_executable(${PROJECT_NAME} ${SRC_FILES})
 target_include_directories(${PROJECT_NAME} PRIVATE ${INCLUDE_DIR})
-set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 11)
+set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 17)
 if(NOT MSVC)
 	target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra)
 endif()
