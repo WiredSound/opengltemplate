@@ -1,3 +1,5 @@
+#pragma once
+
 /// Initialise GLFW. Must called before creating a window.
 void init_glfw();
 
